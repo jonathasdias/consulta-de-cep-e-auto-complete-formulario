@@ -1,0 +1,91 @@
+* {margin:0;padding:0;box-sizing:border-box;font-family: 'Source Sans Pro', sans-serif;}
+
+header {
+    background-color: black;
+    color: rgb(14, 56, 241);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 26px;
+}
+
+.nav-menu {
+    width: 100%;
+    display: flex;
+}
+
+header h4 {
+    border-radius: 16px 16px 0 0;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ativo {
+    background-color: rgb(31, 29, 29);
+}
+
+/* main {
+    padding: 20px;
+} */
+
+/* Formulário De Auto complete */
+
+#dv-auto-complete-cep {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(31, 29, 29);
+}
+
+#form-cep {
+    width: 70%;
+    border: 2px solid rgb(14, 56, 241);
+    box-shadow: 0 0 4px rgb(14, 56, 241);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#form-cep .ipt{
+    height: 2rem;
+    background-color: rgb(151, 148, 148);
+    border-radius: 6px;
+    padding: 4px;
+}
+
+#form-cep label {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: rgb(236, 225, 225);
+}
+
+#btn-enviar {
+    width: 20%;
+    margin: 20px 0 6px 0;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+    align-self: end;
+    border: 2px solid rgb(14, 56, 241);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgb(14, 56, 241);
+    background-color: transparent;
+    color: rgb(236, 225, 225);
+}
+
+#btn-enviar:hover {
+    background-color: rgba(70, 65, 65, 0.418);
+}
+
+footer {
+    background-color: black;
+    padding: 1rem;
+    text-align: center;
+    color: rgb(14, 56, 241);
+}
