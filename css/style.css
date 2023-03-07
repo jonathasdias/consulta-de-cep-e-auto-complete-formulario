@@ -11,12 +11,12 @@ header h1 {
     padding: 26px;
 }
 
-.nav-menu {
+#nav-menu {
     width: 100%;
     display: flex;
 }
 
-header h4 {
+header .menu-item {
     border-radius: 16px 16px 0 0;
     padding: 10px;
     cursor: pointer;
@@ -27,18 +27,23 @@ header h4 {
     background-color: rgb(31, 29, 29);
 }
 
-/* main {
-    padding: 20px;
-} */
+main {
+    height: 100vh;
+    background-color: rgb(31, 29, 29);
+    display: grid;
+    place-items: center;
+}
 
 /* Formulário De Auto complete */
 
 #dv-auto-complete-cep {
     padding: 20px;
     width: 100%;
-    display: flex;
-    justify-content: center;
     background-color: rgb(31, 29, 29);
+}
+
+.desabilitar {
+    display: none;
 }
 
 #form-cep {
@@ -47,8 +52,25 @@ header h4 {
     box-shadow: 0 0 4px rgb(14, 56, 241);
     border-radius: 16px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 10px;
     padding: 10px;
+    margin: auto;
+}
+
+#form-cep h1 {
+    width: 100%;
+    text-align: center;
+    color: rgb(236, 225, 225);
+    font-size: 3rem;
+    padding: 20px 0;
+}
+
+#form-cep label {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: rgb(236, 225, 225);
+    display: block;
 }
 
 #form-cep .ipt{
@@ -56,16 +78,28 @@ header h4 {
     background-color: rgb(151, 148, 148);
     border-radius: 6px;
     padding: 4px;
+    width: 100%;
+    font-size: 16px;
 }
 
-#form-cep label {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: rgb(236, 225, 225);
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 4px;
+}
+
+.container-input-endereco {
+    width: 80%;
+}
+
+.container-input {
+    width: 40%;
+    min-width: 100px;    
 }
 
 #btn-enviar {
-    width: 20%;
+    min-width: 20%;
     margin: 20px 0 6px 0;
     padding: 5px;
     font-size: 1rem;
@@ -81,6 +115,59 @@ header h4 {
 
 #btn-enviar:hover {
     background-color: rgba(70, 65, 65, 0.418);
+}
+
+/* Container nuscar dados */
+
+#dv-buscar-dados-cep {
+    border: 2px solid rgb(14, 56, 241);
+    border-radius: 15px;
+    box-shadow: 0 0 4px rgb(14, 56, 241);
+    padding: 20px;
+    color: rgb(236, 225, 225);
+}
+
+#form-buscar-cep {
+    width: 100%;
+}
+
+#form-buscar-cep label{
+    display: block;
+    font-size: 1.6rem;
+    margin: 10px 0;
+}
+
+#form-buscar-cep #input-cep {
+    width: 80%;
+    height: 35px;
+    font-size: 20px;
+    padding-left: 4px;
+    border-radius: 6px;
+    background-color: rgb(151, 148, 148);
+}
+
+#form-buscar-cep #btn-consulta {
+    background-color: rgba(49, 47, 47, 0.993);
+    border: 2px solid rgb(14, 56, 241);
+    box-shadow: 0 0 4px rgb(14, 56, 241);
+    color: rgb(236, 225, 225);
+    height: 35px;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#form-buscar-cep #btn-consulta:hover {
+    background-color: rgba(14, 56, 241, 0.192);
+}
+
+#dv-dados {
+    margin-top: 20px;
+    font-size: 1.7rem;
+}
+
+#dv-dados span {
+    color: rgb(14, 56, 241);
 }
 
 footer {

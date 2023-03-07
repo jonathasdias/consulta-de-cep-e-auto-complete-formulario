@@ -6,51 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Cep Api</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsivo.css">
 </head>
 <body>
     <header>
         <h1>Projeto Cep Api</h1>
-        <nav class="nav-menu">
-            <h4 class="auto-complete-cep ativo">Formulário Com Auto-Complete Atraves Do Cep</h4>
-            <h4 class="buscar-cep">Consulte Os Dados Do Cep De Interesse</h4>
+        <nav id="nav-menu">
+            <h4 id="auto-complete-cep" class="menu-item ativo">Formulário Com Auto Complete Atraves Do Cep</h4>
+            <h4 id="buscar-cep" class="menu-item">Consulte Os Dados Do Cep De Interesse</h4>
         </nav>
     </header>
     <main>
 
         <section id="dv-auto-complete-cep">
             <form id="form-cep">
-                <label for="input-cep">Cep:</label>
-                <input type="text" name="input-cep" class="ipt" id="input-cep" maxlength="9" minlength="9" required>
+                <h1>Formulário</h1>
 
-                <label for="input-endereco">Endereço:</label>
-                <input type="text" name="input-endereco" class="ipt" id="input-endereco">
+                <div class="container">
+                    <div class="container-input-cep container-input">
+                        <label for="input-cep-form">Cep:</label>
+                        <input type="text" name="input-cep-form" class="ipt" id="input-cep-form" maxlength="9" minlength="9" required>
+                    </div>
+    
+                    <div class="container-input-cidade container-input">
+                        <label for="input-cidade">Cidade:</label>
+                        <input type="text" name="input-cidade" class="ipt" id="input-cidade">
+                    </div>
+    
+                    <div class="container-input-estado container-input">
+                        <label for="input-estado">Estado:</label>
+                        <input type="text" name="input-estado" class="ipt" id="input-estado">
+                    </div>
+                </div>
 
-                <label for="input-bairro">Bairro:</label>
-                <input type="text" name="input-bairro" class="ipt" id="input-bairro">
+                <div class="container-input-endereco">
+                    <label for="input-endereco">Endereço:</label>
+                    <input type="text" name="input-endereco" class="ipt" id="input-endereco">
+                </div>
 
-                <label for="input-cidade">Cidade:</label>
-                <input type="text" name="input-cidade" class="ipt" id="input-cidade">
+                <div class="container">
+                    <div class="container-input-bairro container-input">
+                        <label for="input-bairro">Bairro:</label>
+                        <input type="text" name="input-bairro" class="ipt" id="input-bairro">
+                    </div>
+    
+                    <div class="container-input-ibge container-input">
+                        <label for="input-ibge">IBGE:</label>
+                        <input type="text" name="input-ibge" class="ipt" id="input-ibge">
+                    </div>
+                </div>
 
-                <label for="input-ibge">IBGE:</label>
-                <input type="text" name="input-ibge" class="ipt" id="input-ibge">
-
-                <label for="input-estado">Estado:</label>
-                <input type="text" name="input-estado" class="ipt" id="input-estado">
-
-                
                 <input type="submit" id="btn-enviar" value="Enviar">
             </form>
-
         </section>
 
-        <!-- <section id="dv-buscar-dados-cep">
+        <section id="dv-buscar-dados-cep" class="desabilitar">
 
             <div id="form-buscar-cep">
                 <label for="input-cep">Digite o número do seu cep para receber seus dados.</label>
                 <input type="text" name="input-cep" id="input-cep" maxlength="9" minlength="9" required>
                 
-                <input type="submit" id="btn-consulta" value="Consultar" disabled>
-                enquanto o length do input cep for menor que ou maior que 8, este botão ficara desativado.  
+                <input type="button" id="btn-consulta" value="Consultar">
+                <!-- enquanto o length do input cep for menor que ou maior que 8, este botão ficara desativado.   -->
             </div>
 
             <div id="dv-dados">
@@ -62,14 +79,16 @@
                 <h4>Estado: <span class="estado"></span></h4>
             </div>
 
-        </section> -->
+        </section>
 
     </main>
 
     <footer>
-        <h4>Jonathas Dias</h4>
+        <h3>Jonathas Dias</h3>
     </footer>
     
-    <!-- <script src="./javascript/script.js"></script> -->
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/consultarCep.js"></script>
+    <script src="./javascript/formulario.js"></script>
 </body>
 </html>
