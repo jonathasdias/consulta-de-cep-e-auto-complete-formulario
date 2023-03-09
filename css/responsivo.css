@@ -60,6 +60,11 @@
     header .menu-item {
         font-size: .7rem;
     }
+
+    #containerErro {
+        font-size: 20px;
+    }
+
     /* responsivo form */
     .container {
         flex-wrap: wrap;

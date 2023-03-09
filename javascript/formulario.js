@@ -9,18 +9,21 @@ let formBairroElement = document.getElementById('input-bairro');
 let formIbgeElement = document.getElementById('input-ibge');
 
 async function completarDadosFormCep() {
-    try {
-        let obj = await recebendoDadosApi(formCepElement.value);
+    let obj = await recebendoDadosApi(formCepElement.value);
 
+    if(obj.status == 400 || obj.status == 404){
+        console.error("Deu erro");
+        formCidadeElement.value = ''
+        formEstadoElement.value = ''
+        formEnderecoElement.value = ''
+        formBairroElement.value = ''
+        formIbgeElement.value = ''
+    } else {
         formCidadeElement.value = obj.city
         formEstadoElement.value = obj.state
         formEnderecoElement.value = obj.address
         formBairroElement.value = obj.district
         formIbgeElement.value = obj.city_ibge
-        
-    } catch (error) {
-        console.error('Deu Erro')
-        // ultilizar os message dos erros em algum lugar da tela.
     }
 }
 

@@ -5,7 +5,6 @@ let menuItems = document.querySelectorAll('.menu-item');
 
 menuItems.forEach((item)=>{
     item.addEventListener('click', ()=>{
-
         for (let i = 0; i < menuItems.length; i++) {
             menuItems[i].classList.remove('ativo');
         }

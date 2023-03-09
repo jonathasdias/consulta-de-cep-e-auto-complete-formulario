@@ -10,19 +10,23 @@ let spanIbge = document.querySelector('.ibge');
 let spanEstado = document.querySelector('.estado');
 
 async function mostrarDadosCep() {
-    try {
-        let obj = await recebendoDadosApi(cepInputElement.value);
+    let obj = await recebendoDadosApi(cepInputElement.value);
 
+    if(obj.status == 400 || obj.status == 404){
+        console.error("Deu erro");
+        spanCep.innerHTML = ''
+        spanEndereco.innerHTML = ''
+        spanCidade.innerHTML = ''
+        spanBairro.innerHTML = ''
+        spanIbge.innerHTML = ''
+        spanEstado.innerHTML = ''
+    } else {
         spanCep.innerHTML = obj.cep
         spanEndereco.innerHTML = obj.address
         spanCidade.innerHTML = obj.city
         spanBairro.innerHTML = obj.district
         spanIbge.innerHTML = obj.city_ibge
         spanEstado.innerHTML = obj.state
-        
-    } catch (error) {
-        console.error('Deu Erro')
-        // ultilizar os message dos erros em algum lugar da tela.
     }
 }
 
