@@ -19,6 +19,9 @@
     <main>
         <section id="dv-auto-complete-cep">
             <form id="form-cep">
+
+                <div id="alerta-form">O cep inserido estar incorreto ou não existe.</div>
+
                 <h1>Formulário</h1>
 
                 <div class="container">
@@ -62,8 +65,10 @@
         <section id="dv-buscar-dados-cep" class="desabilitar">
 
             <div id="form-buscar-cep">
+                <div id="alerta-dados">O cep inserido estar incorreto ou não existe.</div>
+
                 <label for="input-cep">Digite o número do seu cep para receber seus dados.</label>
-                <input type="text" name="input-cep" id="input-cep" maxlength="8" minlength="8" required>
+                <input type="text" name="input-cep" id="input-cep" maxlength="9" minlength="8" required>
                 
                 <input type="button" id="btn-consulta" value="Consultar">
             </div>
@@ -87,5 +92,7 @@
     <script src="./javascript/script.js"></script>
     <script type="module" src="./javascript/consultarCep.js"></script>
     <script type="module" src="./javascript/formulario.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 import recebendoDadosApi from "./consumoApi.js"
 
 let cepInputElement = document.getElementById('input-cep');
+let alertaDados = document.getElementById('alerta-dados');
 
 let spanCep = document.querySelector('.cep');
 let spanEndereco = document.querySelector('.endereco');
@@ -9,24 +10,34 @@ let spanCidade = document.querySelector('.cidade');
 let spanIbge = document.querySelector('.ibge');
 let spanEstado = document.querySelector('.estado');
 
+function mascarasInputs() {
+    $('#input-cep').mask('00000-000');
+}
+mascarasInputs();
+
+function tratamentoErro(infoCep) {
+    if(cepInputElement.value.length < 9) {
+        alertaDados.style.display = "block";
+        return "";
+    } else {
+        alertaDados.style.display = "none";
+        return infoCep;
+    }
+}
+
 async function mostrarDadosCep() {
     let obj = await recebendoDadosApi(cepInputElement.value);
 
-    if(obj.status == 400 || obj.status == 404){
-        console.error("Deu erro");
-        spanCep.innerHTML = ''
-        spanEndereco.innerHTML = ''
-        spanCidade.innerHTML = ''
-        spanBairro.innerHTML = ''
-        spanIbge.innerHTML = ''
-        spanEstado.innerHTML = ''
-    } else {
-        spanCep.innerHTML = obj.cep
-        spanEndereco.innerHTML = obj.address
-        spanCidade.innerHTML = obj.city
-        spanBairro.innerHTML = obj.district
-        spanIbge.innerHTML = obj.city_ibge
-        spanEstado.innerHTML = obj.state
+    try {
+        spanCep.innerHTML = tratamentoErro(obj.cep)
+        spanEndereco.innerHTML = tratamentoErro(obj.address)
+        spanCidade.innerHTML = tratamentoErro(obj.city)
+        spanBairro.innerHTML = tratamentoErro(obj.district)
+        spanIbge.innerHTML = tratamentoErro(obj.city_ibge)
+        spanEstado.innerHTML = tratamentoErro(obj.state)
+        
+    } catch (error) {
+        console.error(error);
     }
 }
 

@@ -82,6 +82,20 @@ main {
     font-size: 16px;
 }
 
+#alerta-form {
+    padding: 6px 16px;
+    border: 2px solid black;
+    color: red;
+    display: none;
+}
+
+#alerta-dados {
+    padding: 6px 16px;
+    border: 2px solid black;
+    color: red;
+    display: none;
+}
+
 .container {
     width: 100%;
     display: flex;
