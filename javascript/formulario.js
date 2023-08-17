@@ -28,17 +28,18 @@ async function completarDadosFormCep() {
     let obj = await recebendoDadosApi(formCepElement.value);
     
     try {
+        alertaForm.style.display = "none";
         formCidadeElement.value = tratamentoErro(obj.city)
         formEstadoElement.value = tratamentoErro(obj.state)
         formEnderecoElement.value = tratamentoErro(obj.address)
         formBairroElement.value = tratamentoErro(obj.district)
         formIbgeElement.value = tratamentoErro(obj.city_ibge)
     } catch (error) {
-        console.error(error);
+        alertaForm.style.display = "block";
     }
 }
 
-document.getElementById('input-cep-form').addEventListener('input', ()=>{
+document.getElementById('input-cep-form').addEventListener('blur', ()=>{
     completarDadosFormCep();
 });
 

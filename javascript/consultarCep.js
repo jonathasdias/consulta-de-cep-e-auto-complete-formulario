@@ -29,15 +29,15 @@ async function mostrarDadosCep() {
     let obj = await recebendoDadosApi(cepInputElement.value);
 
     try {
+        alertaDados.style.display = "none";
         spanCep.innerHTML = tratamentoErro(obj.cep)
         spanEndereco.innerHTML = tratamentoErro(obj.address)
         spanCidade.innerHTML = tratamentoErro(obj.city)
         spanBairro.innerHTML = tratamentoErro(obj.district)
         spanIbge.innerHTML = tratamentoErro(obj.city_ibge)
         spanEstado.innerHTML = tratamentoErro(obj.state)
-        
     } catch (error) {
-        console.error(error);
+        alertaDados.style.display = "block";
     }
 }
 
