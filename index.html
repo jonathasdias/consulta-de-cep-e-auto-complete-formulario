@@ -1,98 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Cep Api</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/responsivo.css">
+    <title>Check zip code</title>
 </head>
 <body>
-    <header>
-        <h1>Projeto Cep Api</h1>
-        <nav id="nav-menu">
-            <h4 id="auto-complete-cep" class="menu-item ativo">Formulário Com Auto Complete Atraves Do Cep</h4>
-            <h4 id="buscar-cep" class="menu-item">Consulte Os Dados Do Cep De Interesse</h4>
+
+    <header class="bg-black text-blue-700">
+        <h1 class="text-center text-3xl pt-4">Check zip code</h1>
+
+        <nav id="menu" class="px-4 sm:flex">
+            <button id="btn-form-auto-complete" class="hover:bg-slate-950 rounded-t-xl p-4 bg-slate-950">Data submission form</button>
+            <button id="btn-form-search-cep" class="hover:bg-slate-950 rounded-t-xl p-4">Check zip code</button>
         </nav>
     </header>
-    <main>
-        <section id="dv-auto-complete-cep">
-            <form id="form-cep">
 
-                <div id="alerta-form">O cep inserido estar incorreto ou não existe.</div>
+    <main class="bg-slate-950 grid place-items-center p-2" style="min-height: calc(100vh - 10rem);">
 
-                <h1>Formulário</h1>
+        <form id="form-auto-complete" class="border-2 border-blue-800 text-xl text-gray-300 p-4 rounded-lg w-full sm:w-9/12">
 
-                <div class="container">
-                    <div class="container-input-cep container-input">
-                        <label for="input-cep-form">Cep:</label>
-                        <input type="text" name="input-cep-form" class="ipt" id="input-cep-form" maxlength="9" minlength="9" required>
-                    </div>
-    
-                    <div class="container-input-cidade container-input">
-                        <label for="input-cidade">Cidade:</label>
-                        <input type="text" name="input-cidade" class="ipt" id="input-cidade">
-                    </div>
-    
-                    <div class="container-input-estado container-input">
-                        <label for="input-estado">Estado:</label>
-                        <input type="text" name="input-estado" class="ipt" id="input-estado">
-                    </div>
+            <h2 class="text-2xl sm:text-3xl text-center pb-6">Form auto complete</h2>
+
+            <p id="alerta-form-auto-complete" class="text-red-700 hidden">The zip code entered is incorrect or does not exist.</p>
+            
+            <div class="flex flex-wrap gap-2">
+
+                <div class="w-full sm:flex-1">
+                    <label for="input-cep" class="block">Cep: </label>
+                    <input type="text" name="input-cep" class="w-full text-black p-1" id="input-cep" placeholder="12345-678" maxlength="9" minlength="9" required>
                 </div>
 
-                <div class="container-input-endereco">
-                    <label for="input-endereco">Endereço:</label>
-                    <input type="text" name="input-endereco" class="ipt" id="input-endereco">
+                <div class="w-full sm:flex-1">
+                    <label for="input-city" class="block">City: </label>
+                    <input type="text" name="input-city" class="w-full text-black p-1" id="input-city" placeholder="Enter the name of your city
+                    ">
                 </div>
 
-                <div class="container">
-                    <div class="container-input-bairro container-input">
-                        <label for="input-bairro">Bairro:</label>
-                        <input type="text" name="input-bairro" class="ipt" id="input-bairro">
-                    </div>
-    
-                    <div class="container-input-ibge container-input">
-                        <label for="input-ibge">IBGE:</label>
-                        <input type="text" name="input-ibge" class="ipt" id="input-ibge">
-                    </div>
+                <div class="w-full sm:flex-1">
+                    <label for="input-state" class="block">State: </label>
+                    <input type="text" name="input-state" class="w-full text-black p-1" id="input-state" placeholder="Enter the name of your state">
                 </div>
 
-                <input type="submit" id="btn-enviar" value="Enviar">
-            </form>
-        </section>
-
-        <section id="dv-buscar-dados-cep" class="desabilitar">
-
-            <div id="form-buscar-cep">
-                <div id="alerta-dados">O cep inserido estar incorreto ou não existe.</div>
-
-                <label for="input-cep">Digite o número do seu cep para receber seus dados.</label>
-                <input type="text" name="input-cep" id="input-cep" maxlength="9" minlength="8" required>
-                
-                <input type="button" id="btn-consulta" value="Consultar">
             </div>
 
-            <div id="dv-dados">
-                <h4>Cep: <span class="cep"></span></h4>
-                <h4>Endereço: <span class="endereco"></span></h4>
-                <h4>Bairro: <span class="bairro"></span></h4>
-                <h4>Cidade: <span class="cidade"></span></h4>
-                <h4>IBGE Cidade: <span class="ibge"></span></h4>
-                <h4>Estado: <span class="estado"></span></h4>
+            <div class="my-2">
+                <label for="input-address" class="block">Address:</label>
+                <input type="text" name="input-address" class="w-full text-black p-1" id="input-address" placeholder="Enter your address">
             </div>
 
-        </section>
+            <div class="flex flex-wrap gap-2">
+                <div class="w-full sm:flex-1">
+                    <label for="input-district" class="block">District:</label>
+                    <input type="text" name="input-district" class="w-full text-black p-1" id="input-district" placeholder="Enter the name of your district">
+                </div>
+
+                <div class="w-full sm:flex-1">
+                    <label for="input-ibge" class="block">IBGE:</label>
+                    <input type="text" name="input-ibge" class="w-full text-black p-1" id="input-ibge" placeholder="ex: 3247641">
+                </div>
+
+                <div class="w-full sm:flex-1">
+                    <label for="input-ddd" class="block">DDD:</label>
+                    <input type="text" name="input-ddd" class="w-11 text-center text-black p-1" id="input-ddd" placeholder="74">
+                </div>
+            </div>
+
+            <button type="submit" id="btn-send" class="py-2 px-8 bg-blue-950 mt-4">Send</button>
+            <button type="reset" id="btn-reset" class="py-2 px-8 bg-blue-950 mt-4">Reset</button>
+        </form>
+
+        <form id="form-search-cep" class="text-gray-300 border-2 border-blue-800 p-4 w-full sm:w-9/12 hidden">
+            
+            <h2 class="text-xl sm:text-3xl text-center mb-6">See zip code data</h2>
+            
+            <p id="alerta-form-search" class="text-red-700 hidden">The zip code entered is incorrect or does not exist.</p>
+
+            <div class="flex justify-center">
+                <input type="search" class="py-1 px-2 text-black rounded-l-lg w-full" name="input-search-cep" id="input-search-cep" placeholder="Search datas cep" maxlength="9" minlength="8" required>
+                <button type="submit" id="btn-search" class="bg-blue-900 py-2 px-4 rounded-r-lg">Search</button>
+            </div>
+
+            <div id="dv-datas" class="text-xl sm:text-2xl mt-6">
+                <h4>Cep: <span id="data-cep" class="text-blue-700"></span></h4>
+                <h4>Address: <span id="data-address" class="text-blue-700"></span></h4>
+                <h4>District: <span id="data-district" class="text-blue-700"></span></h4>
+                <h4>City: <span id="data-city" class="text-blue-700"></span></h4>
+                <h4>IBGE: <span id="data-ibge" class="text-blue-700"></span></h4>
+                <h4>State: <span id="data-state" class="text-blue-700"></span></h4>
+                <h4>DDD: <span id="data-ddd" class="text-blue-700"></span></h4>
+            </div>
+
+        </form>
+
     </main>
 
-    <footer>
-        <h3>Jonathas Dias</h3>
-    </footer>
+    <footer class="bg-black text-blue-700 text-xl text-center py-4">Jonathas dias</footer>
     
-    <script src="./javascript/script.js"></script>
-    <script type="module" src="./javascript/consultarCep.js"></script>
-    <script type="module" src="./javascript/formulario.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./javascript/togglePages.js"></script>
+    <script src="./javascript/masksInput.js"></script>
+    <script type="module" src="./javascript/autoCompleteForm.js"></script>
+    <script type="module" src="./javascript/showDatasForm.js"></script>
 </body>
 </html>
